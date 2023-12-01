@@ -5,18 +5,20 @@ import Fourm from '@/components/Fourm'
 
 export default function Home() {
   return (
-    <main className="bg-white flex flex-col h-screen my-auto items-center md:flex md:flex-row-reverse md:justify-center">
+    <div className='md:h-screen md:flex md:items-center md:justify-center'>
+    <main className="bg-white flex flex-col h-screen my-auto items-center md:fixed md:flex md:flex-row-reverse md:justify-center md:h-5/6 md:p-8 md:rounded-lg">
         <Image
         className='md:hidden'
         priority
         src={signupMobile}
         alt='dtIcon'/>
         <Image
-          className='invisibile md:visible'
+          className='hidden md:block'
           priority
           src={signupDesktop}
           alt='dtIcon'/>
         <Fourm/>
     </main>
+          </div>
   )
 }
