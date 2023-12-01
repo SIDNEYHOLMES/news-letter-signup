@@ -2,7 +2,7 @@ import React from 'react'
 
 const Fourm = () => {
   return (
-    <main className='flex flex-col'>
+    <main className='flex flex-col h-full p-10'>
       <h1 className='text-6xl'>Stay Updated</h1>
       <p>Join 60,000+ product managers reciving monthy updates on:</p>
       <ul>
