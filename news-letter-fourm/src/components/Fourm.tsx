@@ -11,14 +11,16 @@ const Fourm = () => {
     var validationRegx = /\S+@\S+\.\S+/;
     if(validationRegx.test(emailInput)) {
       console.log(true)
+      //if validation pass send email to database
     }
     else {
       console.log(false)
+      // if validation false return "valid email is required"
     }
   }
   
   return (
-    <main className='flex flex-col items-center h-full p-12'>
+    <main className='static flex flex-col items-center h-full p-12'>
       <h1 className=' text-4xl md:text-6xl font-bold text-indigo-900 md:pt-12'>Stay updated!</h1>
       <p className='py-8'>Join 60,000+ product managers reciving monthy updates on:</p>
       <ul className='space-y-5 '>
