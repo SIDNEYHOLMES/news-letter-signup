@@ -1,21 +1,26 @@
 'use client'
-import React, { useRef } from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import listCheck from '../../public/list-check-icon.svg'
 
 const Fourm = () => {
+  let [ emailValidate, setEmailValidate ] = useState(true)
   
   const checkEmailSyntax = (event: any) => {
     event.preventDefault()
     const emailInput = event.target.email.value
     var validationRegx = /\S+@\S+\.\S+/;
-    if(validationRegx.test(emailInput)) { //if validation pass send email to database
-      console.log(true)
-      //if validation pass send email to database
+    if(emailInput === null) {
+      setEmailValidate(false)
+      return;
     }
-    else { // if validation false return "valid email is required"
-      console.log(false)
-      
+    else if (validationRegx.test(emailInput)) {
+      setEmailValidate(true)
+      return;
+    }
+    else {
+      setEmailValidate(false)
+      return;
     }
   }
   
@@ -50,11 +55,11 @@ const Fourm = () => {
         </li>
         <form onSubmit={checkEmailSyntax} className='flex flex-col'>
           <div className='flex flex-row space-x-44 md:space-x-52'>
-            <label htmlFor='email' className='block mb-2 text-sm font-medium text-gray-900'>Email address</label>
-            <p className='text-sm'>Valid Email Required</p>
+            <label htmlFor='submit' className='block mb-2 text-sm font-medium text-gray-900'>Email address</label>
+            <p className={`${emailValidate ? 'hidden' : 'block'} text-sm text-red-400`}>Valid Email Required</p>
           </div>
-          <input type='email' id='email' className='bg-gray-50 border-solid border-2 border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5' placeholder='you@signupmail.com'></input>
-          <button type='submit' className='mt-10 p-3 rounded-md bg-blue-950 text-white'>Subscribe to monthly newsletter</button>
+          <input type='email' id='email' className={`bg-gray-50 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 border-solid border-2 ${emailValidate ? 'border-gray-400 text-gray-900' : 'border-red-400 text-red-700'}`} placeholder='you@signupmail.com'></input>
+          <button type='submit' className='hover:bg-indigo-950 mt-10 p-3 rounded-md bg-blue-950 text-white'>Subscribe to monthly newsletter</button>
         </form>
       </ul>
     </main>
