@@ -13,7 +13,7 @@ export default function Home() {
         src={signupMobile}
         alt='dtIcon'/>
         <Image
-          className='overflow-x-clip hidden md:block'
+          className='overflow-auto hidden md:block'
           priority
           src={signupDesktop}
           alt='dtIcon'/>
