@@ -35,6 +35,7 @@ const Fourm = () => {
           'content-type': 'application/json',
         }
       })
+      window.location.href = '/success' //sends user to the success route
     } catch (err) {
       console.log(err)
     }
@@ -49,7 +50,7 @@ const Fourm = () => {
         {
           ['Product discovery and building what matters', 'Measuring to ensure updates are a success', 'And much more!']
           .map(txt => 
-          <li className='flex items-center'>
+          <li key={txt} className='flex items-center'>
             <Image
               className='mx-4'
               priority
