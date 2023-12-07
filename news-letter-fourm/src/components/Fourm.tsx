@@ -35,6 +35,7 @@ const Fourm = () => {
           'content-type': 'application/json',
         }
       })
+      localStorage.setItem('submittedEmail', email)
       window.location.href = '/success' //sends user to the success route
     } catch (err) {
       console.log(err)
@@ -43,7 +44,7 @@ const Fourm = () => {
   
   return (
     <main className='static flex flex-col items-center h-full p-12'>
-      <h1 className='truncate text-4xl md:text-6xl font-bold text-indigo-900 md:pb-24'>Stay updated!</h1>
+      <h1 className='truncate text-4xl md:text-6xl font-bold md:pb-24'>Stay updated!</h1>
       <p className='py-8'>Join 60,000+ product managers reciving monthy updates on:</p>
       <ul className='space-y-6 md:py-2'>
         {
@@ -64,7 +65,7 @@ const Fourm = () => {
             <p className={`${emailValidate ? 'hidden' : 'block'} text-sm text-red-400`}>Valid Email Required</p>
           </div>
           <input type='email' id='email' className={`bg-gray-50 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 border-solid border-2 ${emailValidate ? 'border-gray-400 text-gray-900' : 'border-red-400 text-red-700'}`} placeholder='you@signupmail.com'></input>
-          <button type='submit' className='hover:bg-indigo-950 mt-10 p-3 rounded-md bg-blue-950 text-white'>Subscribe to monthly newsletter</button>
+          <button type='submit' className='hover:bg-gradient-to-r from-red-500 to-orange-400 mt-10 p-3 rounded-md bg-blue-950 text-white'>Subscribe to monthly newsletter</button>
         </form>
       </ul>
     </main>
