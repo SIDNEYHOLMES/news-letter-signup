@@ -28,7 +28,7 @@ const Fourm = () => {
 
   const submitEmail = async (email: string) => {
     try {
-      await fetch('/api/postEmail/', {
+      await fetch('/api/postEmail/', { // send email to database to be stored for email confirmation
         method: 'POST',
         body: JSON.stringify({data: email}),
         headers: {
@@ -40,7 +40,6 @@ const Fourm = () => {
       console.log(err)
     }
   }
- 
   
   return (
     <main className='static flex flex-col items-center h-full p-12'>
