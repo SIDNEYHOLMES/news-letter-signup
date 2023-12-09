@@ -1,4 +1,5 @@
 'use client'
+import Link from 'next/link';
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react';
 import successIcon from '../../../public/success-icon.svg'
@@ -32,7 +33,7 @@ const Success = () => {
         </p>
         </div>
         </div>
-        <button className='hover:bg-gradient-to-r from-red-500 to-orange-400 mt-10 p-3 rounded-md bg-blue-950 text-white w-full'>Dismiss Message</button>
+        <Link href='/' className='hover:bg-gradient-to-r from-red-500 to-orange-400 mt-10 p-3 rounded-md bg-blue-950 text-white w-full text-center'>Dismiss Message</Link>
       </main>
     </div>
   );
