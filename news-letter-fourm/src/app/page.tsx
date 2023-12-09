@@ -5,7 +5,7 @@ import Fourm from '@/components/Fourm'
 
 export default function Home() {
   return (
-    <div className='md:h-screen md:flex md:items-center md:justify-center'>
+    <div className='md:h-screen md:flex md:items-center md:justify-center'> {/*  md:w-[600] i think is not doing anything*/}
     <main className="bg-white flex flex-col h-full items-center md:fixed md:flex md:flex-row-reverse md:justify-center md:h-5/6 md:w-[600] md:px-8 md:rounded-lg">
         <Image
         className='md:hidden'
